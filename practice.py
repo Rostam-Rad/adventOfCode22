@@ -1,6 +1,3 @@
-def dayThree(ruckSack):
-
-
 if __name__ == "__main__":
     f = open("elf.txt")
     file = f.read().splitlines()
