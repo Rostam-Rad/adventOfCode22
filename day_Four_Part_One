@@ -1,0 +1,23 @@
+def partOneHelper(x1, y1, x2, y2):
+    if(x1 <= x2 and y1 >= y2):
+        print("y1 =", y1, "y2 = ", y2)
+        print("adding one 1 bc", x1, "-", y1, ",", x2, "-",y2)
+        return 1
+    elif(x1 >= x2 and y1 <= y2):
+        print("adding one 2 bc", x1, "-", 2, ",", x2, "-",y2)
+        return 1
+    else:
+        return 0
+
+def dayFourPartOne(line):
+    sections = line.split(",")
+    sectionOne = sections[0].split("-")
+    sectionTwo = sections[1].split("-")
+    return partOneHelper(int(sectionOne[0]),int(sectionOne[1]),int(sectionTwo[0]),int(sectionTwo[1]))
+
+if __name__ == "__main__":
+    f = open("elf.txt")
+    answer = 0
+    for line in f:
+        answer += dayFourPartOne(line)
+    print("answer = ", answer)
